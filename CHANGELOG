@@ -7,6 +7,52 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 This file takes back its content from the HISTORY file maintained until noted
 otherwise.
 
+## [2.0] - 2008-09-10
+
+Piotr Luszczek changed to 64-bit RNG, modified files:
+-- [M] include/hpl_matgen.h
+-- [M] testing/matgen/HPL_ladd.c
+-- [M] testing/matgen/HPL_lmul.c
+-- [M] testing/matgen/HPL_rand.c
+-- [M] testing/ptest/HPL_pdinfo.c
+
+For a motivation for the change, see:
+  Dongarra and Langou, ``The Problem with the Linpack
+  Benchmark Matrix Generator'', LAWN 206, June 2008.
+
+-- [M] testing/ptest/HPL_pdtest.c  --
+
+Julien Langou changed the test for correctness from
+    ||Ax-b||_oo / ( eps * ||A||_1  * N            )
+    ||Ax-b||_oo / ( eps * ||A||_1  * ||x||_1      )
+    ||Ax-b||_oo / ( eps * ||A||_oo * ||x||_oo * N )
+to the normwise backward error
+    || r ||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+See:
+Nicholas J. Higham, ``Accuracy and Stability of Numerical Algorithms'',
+Society for Industrial and Applied Mathematics, Philadelphia, PA, USA,
+Second Edition, pages = xxx+680, ISBN = 0-89871-521-0, 2002.
+
+Note that in our case || b ||_oo is almost for sure
+1/2, we compute it anyway.
+
+## [1.0b] - 2004-12-15
+
+- Fixed problem with 32-bit integer overflow.
+  Thanks to John Baron.
+
+Weakness of the pseudo-random matrix generator found for pro-
+blem sizes being power of twos and larger  than 2^15;  Thanks
+to Gregory Bauer. This problem has not been fixed. It is thus
+currently recommended to  HPL  users willing to test matrices
+of size larger than 2^15 to not use power twos.
+
+When the matrix size is such that one needs  > 16 GB  per MPI
+rank,  the  intermediate  calculation  (mat.ld+1) * mat.nq in
+HPL_pdtest.c  ends up  overflowing  because  it is done using
+32-bit arithmetic.  This issue has been fixed by  typecasting
+to size_t; Thanks to John Baron.
+
 ## [1.0a] - 2004-01-04
 
 - Added Row- or Column-major process mapping in data file

@@ -1,10 +1,10 @@
 ==============================================================
  High Performance Computing Linpack Benchmark (HPL)
- HPL 1.0a - January 20, 2004
+ HPL 2.0 - September 10, 2008
 ==============================================================
 
  HPL is a software package that solves a (random) dense linear
- system  in   double  precision  (64   bits)   arithmetic   on 
+ system  in   double  precision  (64   bits)   arithmetic   on
  distributed-memory  computers.   It can thus be regarded as a
  portable as well as  freely  available implementation  of the
  High Performance Computing Linpack Benchmark.
@@ -28,5 +28,28 @@
 
  Check out  the website  www.netlib.org/benchmark/hpl  for the
  latest information.
+
+==============================================================
+
+Repository synchronization
+===
+
+Synchronization of the code from its
+[source](https://www.netlib.org/benchmark/hpl/index.html) is
+made by downloading the tarball, then extracting it, “rsyncing”
+it with --delete option and excluding README (which is merged
+manually) and the .git directory. Finally, we check the changes
+manually, merge what needs more precautions, commit the changes,
+and tag the version. Here is the command set used for syncing
+version 2.0 (from hpl directory):
+
+    curl -o ../hpl-2.0.tar.gz https://www.netlib.org/benchmark/hpl/hpl-2.0.tar.gz
+    tar -xzf ../hpl-2.0.tar.gz -C ../
+    rsync -a --exclude '.git' --exclude CHANGELOG ../hpl-2.0/ ./ --delete
+    # Review changes before commiting, update Changelog and README
+    git add .
+    git commit -Am 'Version 2.0'
+    git tag v2.0
+    git push
 
 ==============================================================
