@@ -1,6 +1,6 @@
 /* 
  * -- High Performance Computing Linpack Benchmark (HPL)                
- *    HPL - 2.0 - September 10, 2008                          
+ *    HPL - 2.1 - October 26, 2012                          
  *    Antoine P. Petitet                                                
  *    University of Tennessee, Knoxville                                
  *    Innovative Computing Laboratory                                 
@@ -758,8 +758,8 @@ label_error:
                    "========================================",
                    "========================================" );
       HPL_fprintf( TEST->outfp, "%s%s\n",
-          "HPLinpack 2.0  --  High-Performance Linpack benchmark  --  ",
-          " September 10, 2008" );
+          "HPLinpack 2.1  --  High-Performance Linpack benchmark  --  ",
+          " October 26, 2012" );
       HPL_fprintf( TEST->outfp, "%s%s\n",
           "Written by A. Petitet and R. Clint Whaley,  ",
           "Innovative Computing Laboratory, UTK" );

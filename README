@@ -1,6 +1,6 @@
 ==============================================================
  High Performance Computing Linpack Benchmark (HPL)
- HPL 2.0 - September 10, 2008
+ HPL - 2.1 - October 26, 2012
 ==============================================================
 
  HPL is a software package that solves a (random) dense linear
@@ -48,7 +48,7 @@ version 2.0 (from hpl directory):
     rsync -a --exclude '.git' --exclude CHANGELOG ../hpl-2.0/ ./ --delete
     # Review changes before commiting, update Changelog and README
     git add .
-    git commit -Am 'Version 2.0'
+    git commit -m 'Version 2.0'
     git tag v2.0
     git push
 

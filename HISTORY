@@ -1,6 +1,6 @@
 ==============================================================
  High Performance Computing Linpack Benchmark (HPL)
- HPL 2.0 - September 10, 2008
+ HPL - 2.1 - October 26, 2012
 ==============================================================
 
  History
@@ -62,5 +62,16 @@
 
  Note that in our case || b ||_oo is almost for sure
  1/2, we compute it anyway.
+
+ - 10/26/2012 Version 2.1
+
+ Piotr Luszczek introduced exact time stamping for HPL_pdgesv():
+ -- [M] dist/include/hpl_misc.h
+ -- [M] dist/testing/ptest/HPL_pdtest.c
+
+ Piotr Luszczek fixed out-of-bounds access in data spreading functions. exact time stamping for HPL_pdgesv():
+ -- [M] dist/src/pgesv/HPL_spreadN.c
+ -- [M] dist/src/pgesv/HPL_spreadT.c
+ Thanks to Stephen Whalen from Cray.
 
 ==============================================================

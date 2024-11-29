@@ -1,6 +1,6 @@
 /* 
  * -- High Performance Computing Linpack Benchmark (HPL)                
- *    HPL - 2.0 - September 10, 2008                          
+ *    HPL - 2.1 - October 26, 2012                          
  *    Antoine P. Petitet                                                
  *    University of Tennessee, Knoxville                                
  *    Innovative Computing Laboratory                                 
@@ -284,8 +284,8 @@ void HPL_spreadT
 
          if( ( mydist & mask ) == 0 )
          {
-            k    = il + ip2; ibuf = IPLEN[SRCDIST+il];
-            lbuf = ( k >= nprow ? lgth : IPLEN[SRCDIST+k] ) - ibuf;
+            k    = il      ; ibuf = ( k >= nprow ? lgth : IPLEN[SRCDIST+k] );
+            k    = il + ip2; lbuf = ( k >= nprow ? lgth : IPLEN[SRCDIST+k] ) - ibuf;
 
             if( lbuf > 0 )
             {

@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 This file takes back its content from the HISTORY file maintained until noted
 otherwise.
 
+## [2.1] - 2012-10-26
+
+Piotr Luszczek introduced exact time stamping for HPL_pdgesv():
+ -- [M] dist/include/hpl_misc.h
+ -- [M] dist/testing/ptest/HPL_pdtest.c
+
+ Piotr Luszczek fixed out-of-bounds access in data spreading functions. exact time stamping for HPL_pdgesv():
+ -- [M] dist/src/pgesv/HPL_spreadN.c
+ -- [M] dist/src/pgesv/HPL_spreadT.c
+ Thanks to Stephen Whalen from Cray.
+
 ## [2.0] - 2008-09-10
 
 Piotr Luszczek changed to 64-bit RNG, modified files:
