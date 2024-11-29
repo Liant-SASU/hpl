@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 This file takes back its content from the HISTORY file maintained until noted
 otherwise.
 
+## [2.3] - 2018-12-02
+
+Piotr Luszczek removed deprecated MPI functions that are no longer
+supported in some MPI implementations (for example Open MPI 4.0) and
+replaced them with
+modern equivalents in HPL_packL():
+-- [M] src/comm/HPL_packL.c
+
+Piotr Luszczek added one digit to the display of performance result
+and changed display of scaled residual to scientific notation with
+extra digits in HPL_pdtest():
+-- [M] testing/ptest/HPL_pdtest.c
+
+Piotr Luszczek added support for Autotools configuration packages
+autoconf and automake:
+-- [A] Makefile.am
+-- [A] configure.ac
+-- [A] acinclude.m4
+-- [A] src/Makefile.am
+-- [A] testing/Makefile.am
+
 ## [2.2] - 2016-02-24
 
 Piotr Luszczek added continuous reporting of factorization progress
