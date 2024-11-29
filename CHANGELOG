@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 This file takes back its content from the HISTORY file maintained until noted
 otherwise.
 
+## [2.2] - 2016-02-24
+
+Piotr Luszczek added continuous reporting of factorization progress
+submitted by Intel and make scripts that uses Intel software tools and
+libraries and their Apple's Mac OS X equivalents.
+
 ## [2.1] - 2012-10-26
 
 Piotr Luszczek introduced exact time stamping for HPL_pdgesv():
